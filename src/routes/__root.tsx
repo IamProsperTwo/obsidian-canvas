@@ -125,6 +125,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <SiteHeader />
+        <ScrollProgress />
         <main className="flex-1">
           <Outlet />
         </main>
@@ -133,3 +134,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
