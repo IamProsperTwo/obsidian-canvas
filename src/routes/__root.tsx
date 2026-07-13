@@ -11,7 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { SiteHeader, SiteFooter } from "../components/site-chrome";
+import { SiteHeader, SiteFooter, ScrollProgress } from "../components/site-chrome";
 
 function NotFoundComponent() {
   return (
@@ -125,6 +125,7 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="min-h-screen flex flex-col bg-background text-foreground">
         <SiteHeader />
+        <ScrollProgress />
         <main className="flex-1">
           <Outlet />
         </main>
@@ -133,3 +134,4 @@ function RootComponent() {
     </QueryClientProvider>
   );
 }
+
