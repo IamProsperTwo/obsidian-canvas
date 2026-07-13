@@ -11,7 +11,7 @@ import {
   TeamMemberCard,
 } from "@/components/editorial";
 
-export const Route = createFileRoute("/_gallery")({
+export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
       { title: "Component Gallery — Atelier" },
