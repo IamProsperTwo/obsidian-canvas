@@ -1,13 +1,13 @@
 import { Link } from "@tanstack/react-router";
 
-const links = [
+const links: { to: "/" | "/about" | "/approach" | "/portfolio" | "/testimonials" | "/contact"; label: string; exact?: boolean }[] = [
   { to: "/", label: "Index", exact: true },
   { to: "/about", label: "About" },
   { to: "/approach", label: "Approach" },
   { to: "/portfolio", label: "Portfolio" },
   { to: "/testimonials", label: "Testimonials" },
   { to: "/contact", label: "Contact" },
-] as const;
+];
 
 export function SiteHeader() {
   return (
