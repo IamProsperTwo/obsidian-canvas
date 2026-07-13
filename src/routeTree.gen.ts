@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ApproachRouteImport } from './routes/approach'
@@ -19,6 +20,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const TestimonialsRoute = TestimonialsRouteImport.update({
   id: '/testimonials',
   path: '/testimonials',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortfolioRoute = PortfolioRouteImport.update({
@@ -53,6 +59,7 @@ export interface FileRoutesByFullPath {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
 }
 export interface FileRoutesByTo {
@@ -61,6 +68,7 @@ export interface FileRoutesByTo {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
 }
 export interface FileRoutesById {
@@ -70,6 +78,7 @@ export interface FileRoutesById {
   '/approach': typeof ApproachRoute
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
   '/testimonials': typeof TestimonialsRoute
 }
 export interface FileRouteTypes {
@@ -80,9 +89,17 @@ export interface FileRouteTypes {
     | '/approach'
     | '/contact'
     | '/portfolio'
+    | '/sitemap.xml'
     | '/testimonials'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/approach' | '/contact' | '/portfolio' | '/testimonials'
+  to:
+    | '/'
+    | '/about'
+    | '/approach'
+    | '/contact'
+    | '/portfolio'
+    | '/sitemap.xml'
+    | '/testimonials'
   id:
     | '__root__'
     | '/'
@@ -90,6 +107,7 @@ export interface FileRouteTypes {
     | '/approach'
     | '/contact'
     | '/portfolio'
+    | '/sitemap.xml'
     | '/testimonials'
   fileRoutesById: FileRoutesById
 }
@@ -99,6 +117,7 @@ export interface RootRouteChildren {
   ApproachRoute: typeof ApproachRoute
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TestimonialsRoute: typeof TestimonialsRoute
 }
 
@@ -109,6 +128,13 @@ declare module '@tanstack/react-router' {
       path: '/testimonials'
       fullPath: '/testimonials'
       preLoaderRoute: typeof TestimonialsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portfolio': {
@@ -155,6 +181,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApproachRoute: ApproachRoute,
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
   TestimonialsRoute: TestimonialsRoute,
 }
 export const routeTree = rootRouteImport
