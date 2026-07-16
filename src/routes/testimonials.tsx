@@ -159,7 +159,7 @@ function TestimonialsPage() {
                     <Stars />
                     <span>{testimonials[i].project}</span>
                   </span>
-                ) as unknown as string,
+                ),
               }))}
               singleOpen
             />
