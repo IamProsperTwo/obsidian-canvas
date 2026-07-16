@@ -35,7 +35,7 @@ const schema = z.object({
   hoa: yesNo,
   projectDescription: z.string().trim().min(1, "Required").max(2000),
   referral: z.string().trim().min(1, "Required").max(500),
-  captcha: z.literal(true, { message: "Please confirm you're not a robot" }),
+  captcha: z.boolean().refine((v) => v === true, { message: "Please confirm you're not a robot" }),
 });
 
 type FormValues = z.input<typeof schema>;
