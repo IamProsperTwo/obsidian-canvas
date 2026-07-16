@@ -3,6 +3,7 @@ import { Link } from "@tanstack/react-router";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EditorialButton } from "@/components/editorial";
+import { Logo } from "@/components/logo";
 
 const links = [
   { to: "/portfolio", label: "Portfolio" },
@@ -40,13 +41,12 @@ export function SiteHeader() {
         )}
       >
         <div className="container-editorial flex items-center justify-between h-16 md:h-20">
-          <Link
-            to="/"
-            className="inline-flex items-center border border-foreground px-3 py-1.5 eyebrow text-foreground hover:bg-foreground hover:text-background transition-colors"
-            onClick={() => setOpen(false)}
-          >
-            [Your Company]
-          </Link>
+          <div className="hidden md:block">
+            <Logo size={32} onClick={() => setOpen(false)} />
+          </div>
+          <div className="md:hidden">
+            <Logo size={26} onClick={() => setOpen(false)} />
+          </div>
 
           <nav className="hidden md:flex items-center gap-8">
             {links.map((l) => (
@@ -172,9 +172,7 @@ export function SiteFooter() {
         <hr className="hairline" />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 py-16">
           <div>
-            <span className="inline-flex items-center border border-foreground px-3 py-1.5 eyebrow">
-              [Your Company]
-            </span>
+            <Logo size={44} />
           </div>
           <div className="md:justify-self-end space-y-3">
             <p className="eyebrow text-foreground">P / [Phone]</p>
