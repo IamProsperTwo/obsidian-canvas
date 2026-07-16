@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 export interface EditorialAccordionItem {
   id: string;
-  title: string;
+  title: ReactNode;
   content: ReactNode;
 }
 
