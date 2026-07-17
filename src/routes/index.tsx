@@ -9,52 +9,39 @@ import {
 } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
+// ── Images (remote — replace with local imports later) ──
+const heroImage =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80";
+const projectDesert =
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80";
+const projectMountain =
+  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80";
+const projectWater =
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
+const projectWoods =
+  "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80";
+const specialtyHomes =
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=85";
+const specialtyEventVenues =
+  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1800&q=85";
+const specialtyResorts =
+  "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85";
+
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const HERO_IMG =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80";
-
 const projects = [
-  {
-    name: "Desert",
-    image:
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    name: "Mountain",
-    image:
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    name: "Water",
-    image:
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80",
-  },
-  {
-    name: "Woods",
-    image:
-      "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80",
-  },
+  { name: "Desert", image: projectDesert },
+  { name: "Mountain", image: projectMountain },
+  { name: "Water", image: projectWater },
+  { name: "Woods", image: projectWoods },
 ];
 
 const specialties = [
-  {
-    label: "Homes",
-    image:
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=85",
-  },
-  {
-    label: "Event venues",
-    image:
-      "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1800&q=85",
-  },
-  {
-    label: "Boutique resorts",
-    image:
-      "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85",
-  },
+  { label: "Homes", image: specialtyHomes },
+  { label: "Event venues", image: specialtyEventVenues },
+  { label: "Boutique resorts", image: specialtyResorts },
 ];
 
 const press = ["Architectural Digest", "Dezeen", "Wallpaper*", "Dwell", "Domus", "The New York Times"];
@@ -66,7 +53,7 @@ function Home() {
     <>
       {/* 1. Hero */}
       <Hero
-        image={HERO_IMG}
+        image={heroImage}
         eyebrow="What we do"
         headline="Architecture that connects people with nature."
       />
