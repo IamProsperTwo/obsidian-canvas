@@ -10,6 +10,26 @@ import {
   type EditorialAccordionItem,
 } from "@/components/editorial";
 
+// ── Images (remote — replace with local imports later) ──
+const approachHero =
+  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80";
+const visionImage =
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
+const collaborationImage =
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
+const locationDesert =
+  "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=80";
+const locationMountain =
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80";
+const locationWater =
+  "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=2000&q=80";
+const locationWoods =
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80";
+const preDesignOne =
+  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80";
+const preDesignTwo =
+  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
+
 export const Route = createFileRoute("/approach")({
   head: () => ({
     meta: [
