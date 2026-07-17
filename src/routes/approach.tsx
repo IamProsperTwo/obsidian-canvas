@@ -10,6 +10,26 @@ import {
   type EditorialAccordionItem,
 } from "@/components/editorial";
 
+// ── Images (remote — replace with local imports later) ──
+const approachHero =
+  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80";
+const visionImage =
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
+const collaborationImage =
+  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
+const locationDesert =
+  "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=80";
+const locationMountain =
+  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80";
+const locationWater =
+  "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=2000&q=80";
+const locationWoods =
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80";
+const preDesignOne =
+  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80";
+const preDesignTwo =
+  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
+
 export const Route = createFileRoute("/approach")({
   head: () => ({
     meta: [
@@ -38,7 +58,7 @@ const locationTabs: EditorialTab[] = [
     label: "Desert",
     content: (
       <LocationPanel
-        image="https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=80"
+        image={locationDesert}
         title="Designing for the desert."
         body="[How we design for arid climates — thermal mass, shade, orientation, and materials that age gracefully under a hard sun.]"
       />
@@ -49,7 +69,7 @@ const locationTabs: EditorialTab[] = [
     label: "Mountain",
     content: (
       <LocationPanel
-        image="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80"
+        image={locationMountain}
         title="Designing for the mountain."
         body="[Building on slope, working with snow loads, framing views of the range while sheltering from wind.]"
       />
@@ -60,7 +80,7 @@ const locationTabs: EditorialTab[] = [
     label: "Water",
     content: (
       <LocationPanel
-        image="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=2000&q=80"
+        image={locationWater}
         title="Designing for the water."
         body="[Coastal and lakeside homes — salt, humidity, tide, and the discipline of a horizon-facing plan.]"
       />
@@ -71,7 +91,7 @@ const locationTabs: EditorialTab[] = [
     label: "Woods",
     content: (
       <LocationPanel
-        image="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80"
+        image={locationWoods}
         title="Designing for the woods."
         body="[Nestling a home into a forest — dappled light, natural materials, and a quiet dialogue with the trees.]"
       />
@@ -91,12 +111,12 @@ const phases: EditorialAccordionItem[] = [
         </p>
         <div className="grid grid-cols-2 gap-4">
           <img
-            src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80"
+            src={preDesignOne}
             alt=""
             className="aspect-[4/3] w-full object-cover"
           />
           <img
-            src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80"
+            src={preDesignTwo}
             alt=""
             className="aspect-[4/3] w-full object-cover"
           />
@@ -212,7 +232,7 @@ function ApproachPage() {
   return (
     <div>
       <Hero
-        image="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80"
+        image={approachHero}
         eyebrow="How we work"
         headline="Design approach."
         imageAlt="Aerial view of a hillside home"
@@ -225,7 +245,7 @@ function ApproachPage() {
             ratio="balanced"
             left={
               <img
-                src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80"
+                src={visionImage}
                 alt=""
                 className="aspect-[4/5] w-full object-cover"
               />
@@ -274,7 +294,7 @@ function ApproachPage() {
             }
             right={
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80"
+                src={collaborationImage}
                 alt=""
                 className="aspect-[4/5] w-full object-cover"
               />

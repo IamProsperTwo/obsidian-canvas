@@ -4,6 +4,60 @@ import { X } from "lucide-react";
 import { Hero, Reveal } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
+// ── Images (remote — replace with local imports later) ──
+const portfolioHero =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80";
+const sandHouseCover =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
+const sandHouseGallery1 =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80";
+const sandHouseGallery2 =
+  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=80";
+const sandHouseGallery3 =
+  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80";
+const ochreRetreatCover =
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80";
+const ochreRetreatGallery1 =
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80";
+const ochreRetreatGallery2 =
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80";
+const ridgeCabinCover =
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80";
+const ridgeCabinGallery1 =
+  "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=2000&q=80";
+const ridgeCabinGallery2 =
+  "https://images.unsplash.com/photo-1518602164578-cd0074062767?auto=format&fit=crop&w=2000&q=80";
+const alpineHouseCover =
+  "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1600&q=80";
+const alpineHouseGallery1 =
+  "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2000&q=80";
+const alpineHouseGallery2 =
+  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2000&q=80";
+const stillWaterCover =
+  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1600&q=80";
+const stillWaterGallery1 =
+  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=2000&q=80";
+const stillWaterGallery2 =
+  "https://images.unsplash.com/photo-1613977257592-4a9a32f9141b?auto=format&fit=crop&w=2000&q=80";
+const tidalHouseCover =
+  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80";
+const tidalHouseGallery1 =
+  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80";
+const tidalHouseGallery2 =
+  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=80";
+const canopyHouseCover =
+  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80";
+const canopyHouseGallery1 =
+  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=2000&q=80";
+const canopyHouseGallery2 =
+  "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=80";
+const blackForestCover =
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80";
+const blackForestGallery1 =
+  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80";
+const blackForestGallery2 =
+  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80";
+
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
@@ -36,12 +90,8 @@ const projects: Project[] = [
     category: "Desert",
     location: "Sonoran Desert, AZ",
     year: "2024",
-    cover: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: sandHouseCover,
+    gallery: [sandHouseGallery1, sandHouseGallery2, sandHouseGallery3],
     description: "[A low, horizontal residence carved into the desert floor — courtyards, rammed earth walls, and shaded verandas frame long views across the valley.]",
   },
   {
@@ -50,11 +100,8 @@ const projects: Project[] = [
     category: "Desert",
     location: "Marfa, TX",
     year: "2023",
-    cover: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: ochreRetreatCover,
+    gallery: [ochreRetreatGallery1, ochreRetreatGallery2],
     description: "[A pair of pavilions clad in weathered steel — quiet, monastic interiors open onto endless horizon.]",
   },
   {
@@ -63,11 +110,8 @@ const projects: Project[] = [
     category: "Mountain",
     location: "Dolomites, Italy",
     year: "2024",
-    cover: "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1518602164578-cd0074062767?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: ridgeCabinCover,
+    gallery: [ridgeCabinGallery1, ridgeCabinGallery2],
     description: "[Timber and stone lodge cantilevered over a ridge — vast glazed elevations follow the rock.]",
   },
   {
@@ -76,11 +120,8 @@ const projects: Project[] = [
     category: "Mountain",
     location: "Zermatt, Switzerland",
     year: "2022",
-    cover: "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: alpineHouseCover,
+    gallery: [alpineHouseGallery1, alpineHouseGallery2],
     description: "[A chalet reimagined — dark charred cladding, minimal detailing, warm oak interiors.]",
   },
   {
@@ -89,11 +130,8 @@ const projects: Project[] = [
     category: "Water",
     location: "Sognefjord, Norway",
     year: "2025",
-    cover: "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1613977257592-4a9a32f9141b?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: stillWaterCover,
+    gallery: [stillWaterGallery1, stillWaterGallery2],
     description: "[A residence hovering above the water — reflective glass planes dissolve into the fjord.]",
   },
   {
@@ -102,11 +140,8 @@ const projects: Project[] = [
     category: "Water",
     location: "Big Sur, CA",
     year: "2023",
-    cover: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: tidalHouseCover,
+    gallery: [tidalHouseGallery1, tidalHouseGallery2],
     description: "[Board-formed concrete anchors the house to a cliff — walls of glass follow the coastline.]",
   },
   {
@@ -115,11 +150,8 @@ const projects: Project[] = [
     category: "Woods",
     location: "Pacific Northwest, OR",
     year: "2024",
-    cover: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: canopyHouseCover,
+    gallery: [canopyHouseGallery1, canopyHouseGallery2],
     description: "[Elevated among old-growth firs — a slender, dark-clad volume with quiet, cathedral-like interiors.]",
   },
   {
@@ -128,11 +160,8 @@ const projects: Project[] = [
     category: "Woods",
     location: "Baden-Württemberg, DE",
     year: "2022",
-    cover: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80",
-    gallery: [
-      "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80",
-      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80",
-    ],
+    cover: blackForestCover,
+    gallery: [blackForestGallery1, blackForestGallery2],
     description: "[A tight cluster of charred-timber volumes threaded between mature trees.]",
   },
 ];
@@ -166,7 +195,7 @@ function PortfolioPage() {
   return (
     <>
       <Hero
-        image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80"
+        image={portfolioHero}
         eyebrow="Our work"
         headline="Portfolio."
       />

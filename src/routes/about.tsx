@@ -9,6 +9,20 @@ import {
   type EditorialAccordionItem,
 } from "@/components/editorial";
 
+// ── Images (remote — replace with local imports later) ──
+const aboutHero =
+  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=80";
+const missionImage =
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80";
+const teamOne =
+  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80";
+const teamTwo =
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80";
+const teamThree =
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80";
+const teamFour =
+  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80";
+
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
@@ -35,26 +49,22 @@ const team = [
   {
     name: "[Name]",
     role: "Project Architect",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80",
+    image: teamOne,
   },
   {
     name: "[Name]",
     role: "Project Architect",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80",
+    image: teamTwo,
   },
   {
     name: "[Name]",
     role: "Visualization Specialist",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80",
+    image: teamThree,
   },
   {
     name: "[Name]",
     role: "Project Designer",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80",
+    image: teamFour,
   },
 ];
 
@@ -136,7 +146,7 @@ function AboutPage() {
   return (
     <div>
       <Hero
-        image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=80"
+        image={aboutHero}
         eyebrow="Who we are"
         headline="About."
         imageAlt="A building at dusk"
@@ -175,7 +185,7 @@ function AboutPage() {
       {/* Mission callout */}
       <section className="relative h-[80svh] min-h-[520px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80"
+          src={missionImage}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />

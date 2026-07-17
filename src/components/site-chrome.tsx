@@ -5,6 +5,14 @@ import { cn } from "@/lib/utils";
 import { EditorialButton } from "@/components/editorial";
 import { Logo } from "@/components/logo";
 
+// ── Images (remote — replace with local imports later) ──
+const footerPortfolioImage =
+  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
+const footerNewsletterImage =
+  "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80";
+const footerContactImage =
+  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80";
+
 const links = [
   { to: "/portfolio", label: "Portfolio" },
   { to: "/about", label: "About" },
@@ -148,19 +156,19 @@ export function SiteFooter() {
       <div className="container-editorial">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <FooterCTA
-            image="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80"
+            image={footerPortfolioImage}
             eyebrow="Our work"
             label="Portfolio"
             to="/portfolio"
           />
           <FooterCTA
-            image="https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80"
+            image={footerNewsletterImage}
             eyebrow="Subscribe"
             label="Newsletter"
             to="/contact"
           />
           <FooterCTA
-            image="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80"
+            image={footerContactImage}
             eyebrow="Reach out"
             label="Contact"
             to="/contact"

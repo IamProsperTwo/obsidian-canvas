@@ -4,6 +4,10 @@ import { z } from "zod";
 import { Hero, Reveal, EditorialButton } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
+// ── Images (remote — replace with local imports later) ──
+const contactHero =
+  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -120,7 +124,7 @@ function ContactPage() {
   return (
     <main>
       <Hero
-        image="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80"
+        image={contactHero}
         eyebrow="Contact"
         headline="Let's start a conversation about your dream."
       />
