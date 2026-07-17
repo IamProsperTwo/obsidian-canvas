@@ -287,7 +287,7 @@ function SpecialtyPanel({
 }) {
   return (
     <div
-      className="relative aspect-[16/10] h-[85vh] w-full overflow-hidden"
+      className="relative h-[85vh] w-full overflow-hidden"
       onMouseEnter={onEnter}
       ref={(el) => {
         if (!el) return;
