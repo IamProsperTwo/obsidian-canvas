@@ -146,7 +146,7 @@ function AboutPage() {
   return (
     <div>
       <Hero
-        image="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=80"
+        image={aboutHero}
         eyebrow="Who we are"
         headline="About."
         imageAlt="A building at dusk"
@@ -185,7 +185,7 @@ function AboutPage() {
       {/* Mission callout */}
       <section className="relative h-[80svh] min-h-[520px] w-full overflow-hidden">
         <img
-          src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80"
+          src={missionImage}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
         />
