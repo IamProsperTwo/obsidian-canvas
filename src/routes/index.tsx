@@ -248,7 +248,7 @@ function SpecialtiesShowcase({
             </div>
           </div>
         </div>
-        <div className="space-y-24">
+        <div className="space-y-[15vh]">
           {items.map((item, i) => (
             <SpecialtyPanel
               key={item.label}
@@ -287,7 +287,7 @@ function SpecialtyPanel({
 }) {
   return (
     <div
-      className="relative aspect-[3/4] overflow-hidden"
+      className="relative h-[85vh] w-full overflow-hidden"
       onMouseEnter={onEnter}
       ref={(el) => {
         if (!el) return;
