@@ -248,7 +248,7 @@ function SpecialtiesShowcase({
             </div>
           </div>
         </div>
-        <div className="space-y-24">
+        <div className="space-y-[15vh]">
           {items.map((item, i) => (
             <SpecialtyPanel
               key={item.label}
