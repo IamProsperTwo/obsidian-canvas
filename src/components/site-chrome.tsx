@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Youtube, Twitter } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { EditorialButton } from "@/components/editorial";
 import { Logo } from "@/components/logo";
@@ -183,9 +183,20 @@ export function SiteFooter() {
           <div className="md:justify-self-end space-y-3">
             <p className="eyebrow text-foreground">+250 784 836 125</p>
             <p className="eyebrow text-foreground">info@ingabecreations.com</p>
-            <p className="eyebrow text-foreground">Instagram</p>
-            <p className="eyebrow text-foreground">Youtube</p>
-            <p className="eyebrow text-foreground">Twitter</p>
+            <div className="flex items-center gap-6 pt-1">
+              <SocialLink href="https://www.instagram.com/ingabecreations" label="Instagram">
+                <Instagram className="h-[18px] w-[18px]" strokeWidth={1.5} />
+              </SocialLink>
+              <SocialLink href="https://www.youtube.com/@ingabecreations" label="Youtube">
+                <Youtube className="h-[18px] w-[18px]" strokeWidth={1.5} />
+              </SocialLink>
+              <SocialLink href="https://twitter.com/ingabecreations" label="Twitter">
+                <Twitter className="h-[18px] w-[18px]" strokeWidth={1.5} />
+              </SocialLink>
+              <SocialLink href="https://wa.me/250784836125" label="WhatsApp">
+                <WhatsAppIcon className="h-[18px] w-[18px]" />
+              </SocialLink>
+            </div>
           </div>
         </div>
         <hr className="hairline" />
