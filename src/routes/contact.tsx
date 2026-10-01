@@ -20,46 +20,28 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const yesNo = z.enum(["Yes", "No"], { message: "Please choose an option" });
-
 const schema = z.object({
-  firstName: z.string().trim().min(1, "Required").max(100),
-  lastName: z.string().trim().min(1, "Required").max(100),
+  fullName: z.string().trim().min(1, "Required").max(100),
   email: z.string().trim().email("Enter a valid email").max(255),
   phone: z.string().trim().min(5, "Required").max(40),
-  callWindow: z.string().trim().min(1, "Required").max(120),
   service: z.enum(
     ["New Home", "New Event Venue", "Renovation / Addition", "Other"],
     { message: "Please choose a service" },
   ),
-  budget: z.string().trim().min(1, "Required").max(120),
-  completion: z.string().trim().min(1, "Required").max(120),
-  address: z.string().trim().min(1, "Required").max(300),
-  ownsProperty: yesNo,
-  hoa: yesNo,
   projectDescription: z.string().trim().min(1, "Required").max(2000),
   referral: z.string().trim().min(1, "Required").max(500),
-  captcha: z.boolean().refine((v) => v === true, { message: "Please confirm you're not a robot" }),
 });
 
 type FormValues = z.input<typeof schema>;
 type Errors = Partial<Record<keyof FormValues, string>>;
 
 const initial: FormValues = {
-  firstName: "",
-  lastName: "",
+  fullName: "",
   email: "",
   phone: "",
-  callWindow: "",
   service: "" as FormValues["service"],
-  budget: "",
-  completion: "",
-  address: "",
-  ownsProperty: "" as FormValues["ownsProperty"],
-  hoa: "" as FormValues["hoa"],
   projectDescription: "",
   referral: "",
-  captcha: false,
 };
 
 function Field({
@@ -168,22 +150,18 @@ function ContactPage() {
         ) : (
           <Reveal>
             <form noValidate onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
-              <Field label="First name*" htmlFor="firstName" error={errors.firstName}>
+              <Field
+                label="Full name*"
+                htmlFor="fullName"
+                error={errors.fullName}
+                className="md:col-span-2"
+              >
                 <input
-                  id="firstName"
+                  id="fullName"
                   className={inputBase}
-                  value={values.firstName}
-                  onChange={(e) => set("firstName", e.target.value)}
-                  autoComplete="given-name"
-                />
-              </Field>
-              <Field label="Last name*" htmlFor="lastName" error={errors.lastName}>
-                <input
-                  id="lastName"
-                  className={inputBase}
-                  value={values.lastName}
-                  onChange={(e) => set("lastName", e.target.value)}
-                  autoComplete="family-name"
+                  value={values.fullName}
+                  onChange={(e) => set("fullName", e.target.value)}
+                  autoComplete="name"
                 />
               </Field>
 
@@ -209,21 +187,6 @@ function ContactPage() {
               </Field>
 
               <Field
-                label="Best day and time to call*"
-                htmlFor="callWindow"
-                error={errors.callWindow}
-                className="md:col-span-2"
-              >
-                <input
-                  id="callWindow"
-                  className={inputBase}
-                  value={values.callWindow}
-                  onChange={(e) => set("callWindow", e.target.value)}
-                  placeholder="e.g. Tuesday 2–4 PM"
-                />
-              </Field>
-
-              <Field
                 label="What design service are you considering?*"
                 htmlFor="service"
                 error={errors.service}
@@ -240,71 +203,6 @@ function ContactPage() {
                   <option value="New Event Venue" className="bg-background">New Event Venue</option>
                   <option value="Renovation / Addition" className="bg-background">Renovation / Addition</option>
                   <option value="Other" className="bg-background">Other</option>
-                </select>
-              </Field>
-
-              <Field label="What is your budget for the project?*" htmlFor="budget" error={errors.budget}>
-                <input
-                  id="budget"
-                  className={inputBase}
-                  value={values.budget}
-                  onChange={(e) => set("budget", e.target.value)}
-                />
-              </Field>
-              <Field label="What is your ideal completion date?*" htmlFor="completion" error={errors.completion}>
-                <input
-                  id="completion"
-                  className={inputBase}
-                  value={values.completion}
-                  onChange={(e) => set("completion", e.target.value)}
-                />
-              </Field>
-
-              <Field
-                label="Project address (address, city, state, zip)*"
-                htmlFor="address"
-                error={errors.address}
-                className="md:col-span-2"
-              >
-                <input
-                  id="address"
-                  className={inputBase}
-                  value={values.address}
-                  onChange={(e) => set("address", e.target.value)}
-                  autoComplete="street-address"
-                />
-              </Field>
-
-              <Field
-                label="Do you currently own the property listed above?*"
-                htmlFor="ownsProperty"
-                error={errors.ownsProperty}
-              >
-                <select
-                  id="ownsProperty"
-                  className={cn(inputBase, "appearance-none pr-8")}
-                  value={values.ownsProperty}
-                  onChange={(e) => set("ownsProperty", e.target.value as FormValues["ownsProperty"])}
-                >
-                  <option value="" className="bg-background">Select</option>
-                  <option value="Yes" className="bg-background">Yes</option>
-                  <option value="No" className="bg-background">No</option>
-                </select>
-              </Field>
-              <Field
-                label="Does this property have an HOA or CC&Rs?*"
-                htmlFor="hoa"
-                error={errors.hoa}
-              >
-                <select
-                  id="hoa"
-                  className={cn(inputBase, "appearance-none pr-8")}
-                  value={values.hoa}
-                  onChange={(e) => set("hoa", e.target.value as FormValues["hoa"])}
-                >
-                  <option value="" className="bg-background">Select</option>
-                  <option value="Yes" className="bg-background">Yes</option>
-                  <option value="No" className="bg-background">No</option>
                 </select>
               </Field>
 
@@ -337,22 +235,6 @@ function ContactPage() {
                   onChange={(e) => set("referral", e.target.value)}
                 />
               </Field>
-
-              <div className="md:col-span-2 pt-4">
-                <label className="flex items-center gap-4 cursor-pointer select-none">
-                  <input
-                    id="captcha"
-                    type="checkbox"
-                    checked={values.captcha}
-                    onChange={(e) => set("captcha", e.target.checked as never)}
-                    className="h-5 w-5 border border-border bg-transparent accent-foreground"
-                  />
-                  <span className="eyebrow text-muted-foreground">I'm not a robot</span>
-                </label>
-                {errors.captcha ? (
-                  <p className="text-xs text-destructive tracking-wide mt-3">{errors.captcha}</p>
-                ) : null}
-              </div>
 
               <div className="md:col-span-2 pt-8 border-t border-border flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <p className="text-xs text-muted-foreground">* Required</p>
