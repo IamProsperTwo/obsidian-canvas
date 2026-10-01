@@ -11,24 +11,15 @@ import {
 } from "@/components/editorial";
 
 // ── Images (remote — replace with local imports later) ──
-const approachHero =
-  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2400&q=80";
-const visionImage =
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
-const collaborationImage =
-  "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80";
-const locationDesert =
-  "https://images.unsplash.com/photo-1509316785289-025f5b846b35?auto=format&fit=crop&w=2000&q=80";
-const locationMountain =
-  "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=80";
-const locationWater =
-  "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=2000&q=80";
-const locationWoods =
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80";
-const preDesignOne =
-  "https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80";
-const preDesignTwo =
-  "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80";
+import approachHero from "@/assets/CAP_Photo - 10.png";
+import visionImage from "@/assets/A_2 - Photo.png";
+import collaborationImage from "@/assets/NDERA_2 - Photo (copy).png";
+import typeHomes from "@/assets/A_4 - Photo.png";
+import typeCommercial from "@/assets/AZ_option A facade 2.png";
+import typeInteriorDesign from "@/assets/KABAIJA INTERIORS/1D_dinning.jpg";
+import typeSpaces from "@/assets/NYABIHU_1 - Photo.png";
+import preDesignOne from "@/assets/CAP_Photo - 10.png";
+import preDesignTwo from "@/assets/NYABIHU_14 - Photo.png";
 
 export const Route = createFileRoute("/approach")({
   head: () => ({
@@ -37,13 +28,13 @@ export const Route = createFileRoute("/approach")({
       {
         name: "description",
         content:
-          "How we work: vision, collaboration, specialties, project locations, and the phases of every project.",
+          "How we work: vision, collaboration, specialties, project types, and the phases of every project.",
       },
       { property: "og:title", content: "Approach — Design philosophy & process" },
       {
         property: "og:description",
         content:
-          "How we work: vision, collaboration, specialties, project locations, and the phases of every project.",
+          "How we work: vision, collaboration, specialties, project types, and the phases of every project.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,48 +43,48 @@ export const Route = createFileRoute("/approach")({
   component: ApproachPage,
 });
 
-const locationTabs: EditorialTab[] = [
+const projectTypeTabs: EditorialTab[] = [
   {
-    id: "desert",
-    label: "Desert",
+    id: "homes",
+    label: "Homes",
     content: (
       <LocationPanel
-        image={locationDesert}
-        title="Designing for the desert."
-        body="[How we design for arid climates — thermal mass, shade, orientation, and materials that age gracefully under a hard sun.]"
+        image={typeHomes}
+        title="Designing homes."
+        body="A home is the longest conversation we have with a client. We design houses around how people actually live — where the morning light lands, where the quiet corners are, the route from the kitchen to the garden — and we stay on site until the last detail is right."
       />
     ),
   },
   {
-    id: "mountain",
-    label: "Mountain",
+    id: "commercial",
+    label: "Commercial",
     content: (
       <LocationPanel
-        image={locationMountain}
-        title="Designing for the mountain."
-        body="[Building on slope, working with snow loads, framing views of the range while sheltering from wind.]"
+        image={typeCommercial}
+        title="Designing for commerce."
+        body="Commercial buildings have to work hard: for the people inside them, for the street they sit on, and for the business they carry. We design offices, hotels, and mixed-use buildings that earn their place in the city and keep earning it as they age."
       />
     ),
   },
   {
-    id: "water",
-    label: "Water",
+    id: "interior-design",
+    label: "Interior Design",
     content: (
       <LocationPanel
-        image={locationWater}
-        title="Designing for the water."
-        body="[Coastal and lakeside homes — salt, humidity, tide, and the discipline of a horizon-facing plan.]"
+        image={typeInteriorDesign}
+        title="Designing interiors."
+        body="Interiors are where a building meets daily life. We carry the architecture through to the last detail — materials, light, joinery, furniture — so the inside of the building tells the same story as the outside."
       />
     ),
   },
   {
-    id: "woods",
-    label: "Woods",
+    id: "spaces",
+    label: "Spaces",
     content: (
       <LocationPanel
-        image={locationWoods}
-        title="Designing for the woods."
-        body="[Nestling a home into a forest — dappled light, natural materials, and a quiet dialogue with the trees.]"
+        image={typeSpaces}
+        title="Designing spaces."
+        body="Some projects are not a single building but the space around and between buildings — workplaces, public areas, facilities people move through every day. We start with how the space is actually used, then let that use lead the design."
       />
     ),
   },
@@ -102,12 +93,11 @@ const locationTabs: EditorialTab[] = [
 const phases: EditorialAccordionItem[] = [
   {
     id: "pre-design",
-    title: "Thoughtful — Pre-Design",
+    title: "Pre-Design",
     content: (
       <div className="space-y-6">
         <p>
-          [We start by listening. Site visits, program conversations, understanding the client's
-          life and aspirations before a line is drawn.]
+          We visit the site, survey it, and study its climate, zoning, and constraints. We interview you — properly, at length — and write a brief together. Nothing is drawn in this phase, and it's the phase that determines whether the project succeeds.
         </p>
         <div className="grid grid-cols-2 gap-4">
           <img
@@ -126,25 +116,25 @@ const phases: EditorialAccordionItem[] = [
   },
   {
     id: "schematic",
-    title: "Thought Provoking — Schematic Design",
+    title: "Schematic Design",
     content: (
-      <p>[Early massing, plan diagrams, and material studies that test the big ideas.]</p>
+      <p>The first drawings. We develop two or three genuinely different approaches rather than one option with variations, and we argue for each of them. You'll see plans, sections, and early models. We expect to be pushed back on.</p>
     ),
   },
   {
     id: "dd",
-    title: "Thought On — Design Development",
-    content: <p>[Refining the design, resolving detail, coordinating engineering and systems.]</p>,
+    title: "Design Development",
+    content: <p>The chosen direction gets resolved. Materials, structure, systems, and light are worked out in detail alongside our engineering consultants, and the renderings become accurate enough to make decisions from. Costs are tested against reality here, not later.</p>,
   },
   {
     id: "cd",
-    title: "Thought Through — Construction Documents",
-    content: <p>[The drawings that make the building real — precise, coordinated, buildable.]</p>,
+    title: "Construction Documents",
+    content: <p>The full technical set — everything a contractor needs to build the project exactly as designed. Permitting runs in parallel. This phase is unglamorous and it is where most projects are quietly lost or saved.</p>,
   },
   {
     id: "ca",
-    title: "Thought Out — Construction Administration",
-    content: <p>[On site with the builder — protecting design intent through to completion.]</p>,
+    title: "Construction Administration",
+    content: <p>We stay involved through construction: reviewing submittals, answering questions from the field, and visiting the site regularly. Buildings change during construction. We're there to make sure they change in the right direction.</p>,
   },
 ];
 
@@ -155,7 +145,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across continents."
-        body="[The studio has worked across multiple continents, adapting to climate, culture, and code.]"
+        body="Our built work spans four continents, which has taught us that good architecture doesn't travel — but a good method does."
         graphic={<WorldMap />}
       />
     ),
@@ -166,7 +156,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across time zones."
-        body="[Coordinating projects across time zones — from first light to last.]"
+        body="We've run projects across nine time zones. The studio is built for it: early site visits, long handovers, and a documentation habit that assumes nobody is awake to ask."
         graphic={<TimeZoneStrip />}
       />
     ),
@@ -177,7 +167,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across parallels."
-        body="[From equatorial to polar — a range of latitudes shapes how a building meets the sun.]"
+        body="From the tropics to the near-Arctic. The further you get from the equator, the more the sun stops being a nuisance and starts being a resource."
         graphic={<ParallelsGraphic />}
       />
     ),
@@ -188,7 +178,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across altitudes."
-        body="[Sea level to alpine — pressure, air, and light change the way a home performs.]"
+        body="Thin air changes everything — how materials cure, how people breathe, how buildings hold heat. We've designed at both ends of that range."
         graphic={<AltitudeChart />}
       />
     ),
@@ -199,7 +189,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across temperatures."
-        body="[From desert heat to sub-zero winters — envelopes tuned to their climate.]"
+        body="The extremes our buildings have had to survive. Every envelope we detail is designed for the worst week of the year, not the average one."
         graphic={<RangeBar min="-30°" max="45°" />}
       />
     ),
@@ -210,7 +200,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across snowfall."
-        body="[Roofs and rooms that welcome deep snow without fighting it.]"
+        body="Snow load has shaped more of our roof geometry than aesthetics ever has. We consider that a feature."
         graphic={<RangeBar min="0 cm" max="8 m" />}
       />
     ),
@@ -221,7 +211,7 @@ const expertiseTabs: EditorialTab[] = [
     content: (
       <ExpertisePanel
         title="Across rainfall."
-        body="[Dry-land drainage to rainforest downpour — water routed and celebrated.]"
+        body="Water is the thing that ends buildings. We design for the drainage, the overflow, and the failure — in that order."
         graphic={<RangeBar min="50 mm" max="4000 mm" />}
       />
     ),
@@ -247,7 +237,7 @@ function ApproachPage() {
               <img
                 src={visionImage}
                 alt=""
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/3.5] w-full object-cover"
               />
             }
             right={
@@ -255,8 +245,7 @@ function ApproachPage() {
                 <p className="eyebrow">Vision</p>
                 <h2 className="display-xl mt-6">Vision & philosophy.</h2>
                 <p className="body-lg text-muted-foreground mt-8 max-w-xl">
-                  [Your design philosophy in 2–3 sentences. What you believe about place, material,
-                  and the discipline of restraint.]
+                  We believe a building's first obligation is to its site. Before we draw, we spend time on the land — watching where the light lands in the morning, where the wind comes from, where people naturally walk. The design that follows is an argument for that specific place, and it should be impossible to move it somewhere else without the argument falling apart.
                 </p>
               </div>
             }
@@ -271,8 +260,7 @@ function ApproachPage() {
         </Reveal>
         <Reveal delay={120}>
           <p className="body-lg text-muted-foreground max-w-3xl mt-12">
-            [How every project starts with listening and understanding the client's needs and
-            aspirations before any design work begins.]
+            Every project starts with listening. Not a questionnaire — a conversation, usually several, about how you live, what you're tired of, and what you've never been able to articulate to an architect before. Most clients arrive with a plan they think they want. Our job in the first weeks is to find out what's underneath it. The brief we write together at the end of that process is almost never the one we started with, and the building is better for it.
           </p>
         </Reveal>
       </section>
@@ -287,8 +275,7 @@ function ApproachPage() {
                 <p className="eyebrow">Together</p>
                 <h2 className="display-xl mt-6">Collaborative process.</h2>
                 <p className="body-lg text-muted-foreground mt-8 max-w-xl">
-                  [How you collaborate with clients, engineers, and craftspeople — a shared
-                  authorship that produces better buildings.]
+                  Architecture is not a solo act. We work alongside structural and environmental engineers from the first sketch rather than handing drawings over at the end, and we bring in craftspeople — joiners, masons, metalworkers — while decisions are still reversible. It makes the design process slower and the construction process dramatically faster. Clients are part of that room too. You'll see the building change, and you'll know why.
                 </p>
               </div>
             }
@@ -296,7 +283,7 @@ function ApproachPage() {
               <img
                 src={collaborationImage}
                 alt=""
-                className="aspect-[4/5] w-full object-cover"
+                className="aspect-[4/3.5] w-full object-cover"
               />
             }
           />
@@ -310,18 +297,18 @@ function ApproachPage() {
         </Reveal>
         <Reveal delay={80}>
           <p className="body-lg text-muted-foreground max-w-2xl mt-12">
-            [A short intro line about the two main streams of work in the studio.]
+            
           </p>
         </Reveal>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16">
           {[
             {
-              title: "New Build Single Family Homes",
-              body: "[Ground-up homes designed for a specific site, climate, and life.]",
+              title: "Single Family Homes",
+              body: "Ground-up houses on unusual sites — steep, remote, exposed, or protected. We handle the project from site analysis and feasibility through construction administration, and we stay on site until the last detail is right. These projects typically run 18–30 months from first conversation to move-in.",
             },
             {
               title: "Home Renovation / Additions",
-              body: "[Reworking and extending existing homes with the same care as new construction.]",
+              body: "Work on existing buildings, where the constraint is the design. We're interested in what should be kept and why — structure, character, memory — and in making the new work legible against the old rather than pretending it was always there.",
             },
           ].map((c, i) => (
             <Reveal key={c.title} delay={i * 120}>
@@ -334,14 +321,14 @@ function ApproachPage() {
         </div>
       </section>
 
-      {/* Project locations */}
+      {/* Project types */}
       <section className="section container-editorial">
         <Reveal>
-          <SectionHeading eyebrow="Where we work" heading="Project locations." />
+          <SectionHeading eyebrow="What we take on" heading="Project types." />
         </Reveal>
         <Reveal delay={100}>
           <div className="mt-16">
-            <EditorialTabs tabs={locationTabs} />
+            <EditorialTabs tabs={projectTypeTabs} />
           </div>
         </Reveal>
       </section>

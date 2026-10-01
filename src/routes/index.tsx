@@ -9,42 +9,32 @@ import {
 } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
-// ── Images (remote — replace with local imports later) ──
-const heroImage =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80";
-const projectDesert =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80";
-const projectMountain =
-  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80";
-const projectWater =
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
-const projectWoods =
-  "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80";
-const specialtyHomes =
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1800&q=85";
-const specialtyEventVenues =
-  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1800&q=85";
-const specialtyResorts =
-  "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=85";
+// ── Images ──
+import heroImage from "@/assets/AZ_option A facade 2.png";
+import projectHomes from "@/assets/A_4 - Photo.png";
+import projectCommercial from "@/assets/test_9 - Photo.jpg";
+import projectInteriorDesign from "@/assets/D_kitchen .jpg";
+import projectSpaces from "@/assets/NYABIHU_1 - Photo.png";
+import specialtyHomes from "@/assets/NDERA_2.png";
+import specialtyEventVenues from "@/assets/test_3 - Photo.jpg";
+import specialtyResorts from "@/assets/C_ceiling .jpg";
 
 export const Route = createFileRoute("/")({
   component: Home,
 });
 
 const projects = [
-  { name: "Desert", image: projectDesert },
-  { name: "Mountain", image: projectMountain },
-  { name: "Water", image: projectWater },
-  { name: "Woods", image: projectWoods },
+  { name: "Homes", image: projectHomes },
+  { name: "Commercial", image: projectCommercial },
+  { name: "Interior Design", image: projectInteriorDesign },
+  { name: "Spaces", image: projectSpaces },
 ];
 
 const specialties = [
   { label: "Homes", image: specialtyHomes },
-  { label: "Event venues", image: specialtyEventVenues },
-  { label: "Boutique resorts", image: specialtyResorts },
+  { label: "Commercial", image: specialtyEventVenues },
+  { label: "Interior Design", image: specialtyResorts },
 ];
-
-const press = ["Architectural Digest", "Dezeen", "Wallpaper*", "Dwell", "Domus", "The New York Times"];
 
 function Home() {
   const [activeSpec, setActiveSpec] = useState(0);
@@ -54,8 +44,8 @@ function Home() {
       {/* 1. Hero */}
       <Hero
         image={heroImage}
-        eyebrow="What we do"
-        headline="Architecture that connects people with nature."
+        eyebrow=""
+        headline="Architecture that belongs to its landscape."
       />
 
       {/* 2. Intro statement */}
@@ -64,9 +54,8 @@ function Home() {
           <p className="eyebrow">The studio</p>
         </Reveal>
         <Reveal delay={120}>
-          <p className="display-xl mt-10 max-w-5xl">
-            [Describe your firm — what you design, your scale and reach, notable press or awards, in
-            one confident paragraph that reads with quiet authority.]
+          <p className="display-lg text-muted-foreground mt-10">
+            Ingabe is an architecture studio working across residential, hospitality, and cultural projects. We design a small number of buildings each year, closely — every project begins with the site, its climate, and a long conversation with the people who will use it. Our work spans four continents and has been shaped by deserts, mountains, coastlines, and forests, but the method never changes: understand the place first, then build something that could only exist there.
           </p>
         </Reveal>
       </section>
@@ -77,7 +66,7 @@ function Home() {
       <section className="container-editorial section">
         <Reveal>
           <SectionHeading
-            eyebrow="Selected"
+            eyebrow="Explore"
             heading="Our work"
             action={
               <Link to="/portfolio">
@@ -121,9 +110,7 @@ function Home() {
         </Reveal>
         <Reveal delay={120}>
           <p className="body-lg mt-16 max-w-3xl">
-            [What projects you take on — e.g. private homes, event venues, boutique resorts — and
-            how each is shaped by climate, context, and the client's vision. Keep it a single
-            confident paragraph.]
+            We take on new homes, event venues, and boutique resorts — projects where the building has to hold something more than function. Each one is shaped by three forces: the climate it sits in, the context around it, and the vision of the person commissioning it. We don't carry a house style from one site to the next. What we carry is a way of listening.
           </p>
         </Reveal>
       </section>
@@ -145,38 +132,17 @@ function Home() {
           <p className="eyebrow">People are saying</p>
         </Reveal>
         <Reveal delay={120}>
-          <blockquote className="display-xl mt-12 max-w-5xl font-display font-light leading-[1.05]">
+          <blockquote className="display-lg mt-12 max-w-5xl font-display font-light leading-[1.05]">
             <span aria-hidden className="text-muted-foreground">"</span>
-            [Insert a standout client quote — one or two sentences that capture the essence of
-            working with the studio.]
+            We came to Ingabe with a difficult site and a vague idea. They spent the first month asking questions and drawing nothing. What we ended up with is the only house that could have been built on that hill.
             <span aria-hidden className="text-muted-foreground">"</span>
           </blockquote>
         </Reveal>
         <Reveal delay={220}>
-          <p className="eyebrow mt-12">— [Client Name], [Project]</p>
+          <p className="eyebrow mt-12">— CEO, Aziz Complex</p>
         </Reveal>
       </section>
 
-      <hr className="hairline" />
-
-      {/* 7. Featured in */}
-      <section className="container-editorial section">
-        <Reveal>
-          <p className="eyebrow">Featured in</p>
-        </Reveal>
-        <Reveal delay={120}>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-x-8 gap-y-12">
-            {press.map((name) => (
-              <div
-                key={name}
-                className="flex items-center justify-center border border-border py-8 px-4 text-muted-foreground hover:text-foreground hover:border-foreground/50 transition-colors"
-              >
-                <span className="font-display text-lg text-center leading-tight">{name}</span>
-              </div>
-            ))}
-          </div>
-        </Reveal>
-      </section>
     </>
   );
 }
@@ -197,11 +163,11 @@ function SpecialtiesShowcase({
       </Reveal>
 
       {/* Desktop sticky-scroll */}
-      <div className="hidden md:grid mt-16 grid-cols-[1fr_1.2fr] gap-16 lg:gap-24">
+      <div className="hidden md:grid mt-16 grid-cols-[1fr_2fr] gap-12 lg:gap-16">
         <div>
           <div className="sticky top-32">
             <p className="eyebrow text-muted-foreground">Currently viewing</p>
-            <div className="mt-6 relative h-[8.5rem]">
+            <div className="mt-6 relative h-[11rem]">
               {items.map((item, i) => (
                 <h3
                   key={item.label}
@@ -235,7 +201,7 @@ function SpecialtiesShowcase({
             </div>
           </div>
         </div>
-        <div className="space-y-[15vh]">
+        <div className="space-y-24">
           {items.map((item, i) => (
             <SpecialtyPanel
               key={item.label}

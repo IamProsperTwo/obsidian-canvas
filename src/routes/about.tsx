@@ -5,23 +5,16 @@ import {
   SectionHeading,
   EditorialSplit,
   TeamMemberCard,
-  EditorialAccordion,
-  type EditorialAccordionItem,
 } from "@/components/editorial";
 
+
 // ── Images (remote — replace with local imports later) ──
-const aboutHero =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2400&q=80";
-const missionImage =
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80";
-const teamOne =
-  "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=1200&q=80";
-const teamTwo =
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=1200&q=80";
-const teamThree =
-  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80";
-const teamFour =
-  "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=1200&q=80";
+import aboutHero from "@/assets/Sceneupscale.png";
+import missionImage from "@/assets/BB_Clear.png";
+import teamOne from "@/assets/Founder.jpeg";
+import teamTwo from "@/assets/no_profile.jpg";
+import teamThree from "@/assets/no_profile.jpg";
+import teamFour from "@/assets/no_profile.jpg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -30,13 +23,13 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Who we are: the origin of the studio, our firm today, our mission, our team, and the recognition we've received.",
+          "Who we are: the origin of the studio, our firm today, our mission, and our team.",
       },
       { property: "og:title", content: "About — The studio, its people and philosophy" },
       {
         property: "og:description",
         content:
-          "Who we are: the origin of the studio, our firm today, our mission, our team, and the recognition we've received.",
+          "Who we are: the origin of the studio, our firm today, our mission, and our team.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,98 +40,24 @@ export const Route = createFileRoute("/about")({
 
 const team = [
   {
-    name: "[Name]",
-    role: "Project Architect",
+    name: "Madhvan Deo",
+    role: "Senior Architect",
     image: teamOne,
   },
   {
-    name: "[Name]",
-    role: "Project Architect",
+    name: "Mugabo Joseph",
+    role: "Structural Engineer",
     image: teamTwo,
   },
   {
-    name: "[Name]",
-    role: "Visualization Specialist",
+    name: "Nshuti Eric",
+    role: "Quantity Surveyor",
     image: teamThree,
   },
   {
-    name: "[Name]",
-    role: "Project Designer",
+    name: "Zaninka Betty",
+    role: "Project Managment",
     image: teamFour,
-  },
-];
-
-const awardsIntl: EditorialAccordionItem[] = [
-  {
-    id: "intl-1",
-    title: "National and International Awards & Honors",
-    content: (
-      <ul className="space-y-3">
-        <li>[Award Name] — [Institution], [Year]</li>
-        <li>[Award Name] — [Institution], [Year]</li>
-        <li>[Award Name] — [Institution], [Year]</li>
-        <li>[Award Name] — [Institution], [Year]</li>
-      </ul>
-    ),
-  },
-];
-
-const awardsLocal: EditorialAccordionItem[] = [
-  {
-    id: "local-1",
-    title: "Local Awards & Honors",
-    content: (
-      <ul className="space-y-3">
-        <li>[Local Award] — [Year]</li>
-        <li>[Local Award] — [Year]</li>
-        <li>[Local Award] — [Year]</li>
-      </ul>
-    ),
-  },
-];
-
-const books: EditorialAccordionItem[] = [
-  {
-    id: "books-1",
-    title: "Books",
-    content: (
-      <ul className="space-y-3">
-        <li>[Book Title] — [Publisher], [Year]</li>
-        <li>[Book Title] — [Publisher], [Year]</li>
-        <li>[Book Title] — [Publisher], [Year]</li>
-      </ul>
-    ),
-  },
-];
-
-const podcasts: EditorialAccordionItem[] = [
-  {
-    id: "pod-1",
-    title: "Podcasts",
-    content: (
-      <ul className="space-y-3">
-        <li>[Episode Title] — [Podcast Name], [Year]</li>
-        <li>[Episode Title] — [Podcast Name], [Year]</li>
-        <li>[Episode Title] — [Podcast Name], [Year]</li>
-      </ul>
-    ),
-  },
-];
-
-const regions: EditorialAccordionItem[] = [
-  {
-    id: "reg-1",
-    title: "Where we've worked so far",
-    content: (
-      <ul className="grid grid-cols-2 md:grid-cols-3 gap-y-3 gap-x-8">
-        <li>[Region]</li>
-        <li>[Region]</li>
-        <li>[Region]</li>
-        <li>[Region]</li>
-        <li>[Region]</li>
-        <li>[Region]</li>
-      </ul>
-    ),
   },
 ];
 
@@ -147,8 +66,8 @@ function AboutPage() {
     <div>
       <Hero
         image={aboutHero}
-        eyebrow="Who we are"
-        headline="About."
+        eyebrow=""
+        headline="About Us"
         imageAlt="A building at dusk"
       />
 
@@ -159,8 +78,8 @@ function AboutPage() {
             ratio="balanced"
             left={<h2 className="display-xl">Our origin.</h2>}
             right={
-              <p className="body-lg text-muted-foreground">
-                [Founding story — how the studio began, early projects, what put you on the map.]
+              <p className="body-lg text-justify text-muted-foreground">
+                Ingabe began in 2023 with two architects, one drafting table, and a commission to renovate a farmhouse that everyone else had advised the owners to demolish. That project taught us the thing we've built the studio on: the constraint is the brief. What survived of the original structure became the spine of the new house, and the work that followed — a chapel, a pair of desert houses, a lakeside pavilion — came almost entirely from people who had stood inside that farmhouse and wanted to know who made it.
               </p>
             }
           />
@@ -174,10 +93,7 @@ function AboutPage() {
         </Reveal>
         <Reveal delay={120}>
           <p className="body-lg text-muted-foreground max-w-3xl mt-12">
-            [Team size, philosophy, awards, reach, how you work with clients. A longer paragraph
-            describing the studio as it exists today — its size and shape, the kinds of projects it
-            takes on, the values that guide the work, and the way we partner with clients from the
-            first conversation through the final walkthrough.]
+            Today Ingabe is a studio of dedicated architects, designers, and a visualization team. We take on six to eight projects a year, which means every client works directly with the people drawing their building. Our work has been recognised internationally and built across four continents, but the studio is organised around depth rather than volume. We would rather do a small number of buildings properly than a large number adequately.
           </p>
         </Reveal>
       </section>
@@ -196,7 +112,7 @@ function AboutPage() {
         <div className="relative z-10 h-full container-editorial flex flex-col justify-end pb-16 md:pb-24">
           <Reveal>
             <p className="eyebrow text-foreground/80">Our mission</p>
-            <p className="display-xl mt-6 max-w-5xl">[Your mission in one sentence.]</p>
+            <p className="display-xl mt-6 max-w-5xl">To make buildings that feel inevitable — as though the site had been waiting for them.</p>
           </Reveal>
         </div>
       </section>
@@ -215,8 +131,7 @@ function AboutPage() {
                 role={m.role}
                 bio={
                   <p>
-                    [Short bio — background, focus, what they bring to the studio, personal
-                    interests.]
+                    Oversees and leads the studio's projects, from schematic design through construction administration.
                   </p>
                 }
               />
@@ -225,29 +140,6 @@ function AboutPage() {
         </div>
       </section>
 
-      {/* Recognition */}
-      <section className="section container-editorial">
-        <Reveal>
-          <SectionHeading eyebrow="Recognition" heading="Awards, press & reach." />
-        </Reveal>
-        <div className="mt-16 space-y-16">
-          <Reveal>
-            <EditorialAccordion items={awardsIntl} />
-          </Reveal>
-          <Reveal>
-            <EditorialAccordion items={awardsLocal} />
-          </Reveal>
-          <Reveal>
-            <EditorialAccordion items={books} />
-          </Reveal>
-          <Reveal>
-            <EditorialAccordion items={podcasts} />
-          </Reveal>
-          <Reveal>
-            <EditorialAccordion items={regions} />
-          </Reveal>
-        </div>
-      </section>
     </div>
   );
 }

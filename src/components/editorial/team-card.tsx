@@ -26,7 +26,7 @@ export function TeamMemberCard({ image, name, role, bio, imageAlt }: Props) {
         />
         <div className="absolute inset-0 flex items-end justify-between gap-4 p-6 md:p-8">
           <div>
-            <p className="display-lg text-foreground">{name}</p>
+            <p className="display-md text-foreground">{name}</p>
             <p className="eyebrow mt-2 text-foreground/80">{role}</p>
           </div>
           <button

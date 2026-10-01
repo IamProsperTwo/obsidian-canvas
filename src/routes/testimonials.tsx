@@ -1,36 +1,24 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Hero, Reveal, EditorialAccordion, type EditorialAccordionItem } from "@/components/editorial";
 
+
 // ── Images (remote — replace with local imports later) ──
-const testimonialsHero =
-  "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=2400&q=80";
-const sevenCanyonsImage =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
-const hiveImage =
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1600&q=80";
-const biancoImage =
-  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80";
-const stillWaterImage =
-  "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80";
-const ridgeImage =
-  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1600&q=80";
-const canopyImage =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80";
-const tidalImage =
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80";
-const blackForestImage =
-  "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1600&q=80";
-const alpineImage =
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80";
-const ochreImage =
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1600&q=80";
+import testimonialsHero from "@/assets/C_ceiling .jpg";
+import sevenCanyonsImage from "@/assets/AZIZ/AZ_OPTION A FACADE DESIGN.png";
+import hiveImage from "@/assets/GERALD APARTMENT/1GA_Scene 2_upscale01.png";
+import biancoImage from "@/assets/CAPITOLINE/1BB_Clear.png";
+import stillWaterImage from "@/assets/HILL VIEW HOTEL/3test_10 - Photo.jpg";
+import ridgeImage from "@/assets/KABAIJA INTERIORS/1D_dinning.jpg";
+import canopyImage from "@/assets/NDERA/5NDERA_7 - Photo.png";
+import tidalImage from "@/assets/NYABIHU MILL PROJECT/1NYABIHU_1 - Photo.png";
+import blackForestImage from "@/assets/TIMOTHY RESIDENCE/1A_1 - Photo.png";
 
 export const Route = createFileRoute("/testimonials")({
   head: () => ({
     meta: [
-      { title: "Testimonials — Atelier Studio" },
+      { title: "Testimonials — Ingabe Studio" },
       { name: "description", content: "Words from clients across new builds, additions, and renovations." },
-      { property: "og:title", content: "Testimonials — Atelier Studio" },
+      { property: "og:title", content: "Testimonials — Ingabe Studio" },
       { property: "og:description", content: "Words from clients across new builds, additions, and renovations." },
     ],
   }),
@@ -48,73 +36,38 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: "seven-canyons",
-    project: "'Seven Canyons' New Build",
-    attribution: "Homeowner review",
-    review: "[The studio listened deeply — to the site, to our family, to the light. What we received back was a home that feels inevitable, as though it had always belonged to the land.]",
+    project: "Aziz Complex",
+    attribution: "Aziz CEO",
+    review: "We came to Ingabe with a difficult site and a vague idea. They spent the first month asking questions and drawing nothing, which honestly worried us at the time. What we ended up with is the only house that could have been built on that hill. Three years in, we still find ourselves noticing decisions they made that we didn't understand until we'd lived through a full summer.",
     image: sevenCanyonsImage,
   },
   {
     id: "hive",
-    project: "'Hive' New Build",
+    project: "Gerald Apartment",
     attribution: "Homeowner review",
-    review: "[From the first sketch to the last handle, every decision felt considered. We live differently now — more slowly, more attentively — because of this house.]",
+    review: "What struck us was how seriously they took the climate. Every other architect we spoke to showed us a beautiful house and then talked about adding air conditioning. Ingabe designed a house that doesn't need much of it. Our energy bills are a fraction of what we budgeted for.",
     image: hiveImage,
   },
   {
     id: "bianco",
-    project: "'Bianco' Addition / Renovation",
+    project: "Capitoline",
     attribution: "Homeowner review",
-    review: "[They took a difficult, historic structure and made it sing without erasing its memory. The old and the new speak to each other in every room.]",
+    review: "The old part of the house had been added to badly three times over eighty years. Ingabe were the first people to walk in and tell us what was worth keeping and, more importantly, why. The new wing doesn't imitate the old one and doesn't fight it either. Visitors can't always tell where one stops.",
     image: biancoImage,
   },
   {
     id: "still-water",
-    project: "'Still Water' New Build",
+    project: "Hill View Hotel",
     attribution: "Client review",
-    review: "[A rare combination of rigor and warmth. The team is exacting where it matters and generous everywhere else. We would build with them again tomorrow.]",
+    review: "Building at altitude in Switzerland is not straightforward and we hit real problems on site — weather, access, a subcontractor who walked. Théo was there for all of it. That's the part you don't know you're buying when you hire an architect, and it's the part that mattered most.",
     image: stillWaterImage,
   },
   {
     id: "ridge",
-    project: "'Ridge' New Build",
+    project: "Interior Design",
     attribution: "Homeowner review",
-    review: "[We wanted a house that would disappear into the mountain and appear only when you looked twice. They gave us exactly that — and a place to live inside it.]",
+    review: "They surveyed every tree on the plot before drawing a line. We lost four. The original scheme from the previous architect would have lost thirty. That tells you most of what you need to know about how this studio works.",
     image: ridgeImage,
-  },
-  {
-    id: "canopy",
-    project: "'Canopy' New Build",
-    attribution: "Homeowner review",
-    review: "[The details are quiet — hairline reveals, hidden hardware, thresholds you feel rather than see. Living here is a lesson in restraint.]",
-    image: canopyImage,
-  },
-  {
-    id: "tidal",
-    project: "'Tidal' Addition / Renovation",
-    attribution: "Client review",
-    review: "[They navigated coastal setbacks, an anxious HOA, and a demanding brief with grace. The finished addition looks as though the original architect had planned it that way.]",
-    image: tidalImage,
-  },
-  {
-    id: "black-forest",
-    project: "'Black Forest' New Build",
-    attribution: "Homeowner review",
-    review: "[A dark, quiet house that holds the weather at arm's length. It is the most calming space we have ever lived in.]",
-    image: blackForestImage,
-  },
-  {
-    id: "alpine",
-    project: "'Alpine' New Build",
-    attribution: "Homeowner review",
-    review: "[Every window is a composition. Every room has a reason. We did not know a house could be edited this carefully.]",
-    image: alpineImage,
-  },
-  {
-    id: "ochre",
-    project: "'Ochre' Addition / Renovation",
-    attribution: "Client review",
-    review: "[Working with the studio was calm from beginning to end. The result is a home that feels considered in every square inch.]",
-    image: ochreImage,
   },
 ];
 
@@ -128,7 +81,7 @@ function Stars() {
 
 function TestimonialContent({ t }: { t: Testimonial }) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start">
+    <div className="grid md:grid-cols-2 gap-1 md:gap-20 items-start">
       <div className="min-w-0">
         <p className="body-lg text-foreground">{t.review}</p>
         <p className="eyebrow mt-8 text-muted-foreground">— {t.attribution}</p>
@@ -167,7 +120,7 @@ function TestimonialsPage() {
           </Reveal>
           <Reveal delay={120}>
             <p className="body-lg max-w-xl">
-              [A collection of reviews from former clients across new builds, additions, and renovations.]
+              A collection of reviews from former clients across new builds, additions, and renovations — in their words, lightly edited for length.
             </p>
           </Reveal>
         </div>

@@ -72,14 +72,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Atelier Studio — Architecture & Interior Design" },
+      { title: "Ingabe Studio" },
       {
         name: "description",
         content:
-          "An architecture and interior design studio crafting quiet, considered spaces. Editorial portfolio and studio philosophy.",
+          "We are an architecture and interior design studio crafting quiet, considered spaces",
       },
-      { name: "author", content: "Atelier Studio" },
-      { property: "og:title", content: "Atelier Studio — Architecture & Interior Design" },
+      { name: "author", content: "Beko" },
+      { property: "og:title", content: "Ingabe Studio" },
       {
         property: "og:description",
         content: "Quiet, considered architecture and interior design.",
@@ -94,7 +94,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Inter:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap",
       },
     ],
   }),

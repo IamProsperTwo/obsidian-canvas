@@ -4,16 +4,16 @@ import { z } from "zod";
 import { Hero, Reveal, EditorialButton } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
+
 // ── Images (remote — replace with local imports later) ──
-const contactHero =
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2400&q=80";
+import contactHero from "@/assets/NDERA_2.png";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Atelier Studio" },
+      { title: "Contact — Ingabe Studio" },
       { name: "description", content: "Begin a conversation about your dream project." },
-      { property: "og:title", content: "Contact — Atelier Studio" },
+      { property: "og:title", content: "Contact — Ingabe Studio" },
       { property: "og:description", content: "Begin a conversation about your dream project." },
     ],
   }),
@@ -125,7 +125,7 @@ function ContactPage() {
     <main>
       <Hero
         image={contactHero}
-        eyebrow="Contact"
+        eyebrow=""
         headline="Let's start a conversation about your dream."
       />
 
@@ -138,7 +138,7 @@ function ContactPage() {
           </Reveal>
           <Reveal delay={120}>
             <p className="body-lg max-w-xl">
-              [Tell us about your site, your rituals, and the atmosphere you're after. We read every inquiry ourselves and respond within a few days.]
+              Tell us about your project — the site, the idea, the thing you can't quite describe yet. We read every enquiry ourselves and reply within two working days. If we're not the right studio for your project, we'll tell you that too, and try to point you somewhere better.
             </p>
           </Reveal>
         </div>
@@ -209,7 +209,7 @@ function ContactPage() {
               </Field>
 
               <Field
-                label="Best day and time to call (M–F, 9AM–5PM)*"
+                label="Best day and time to call*"
                 htmlFor="callWindow"
                 error={errors.callWindow}
                 className="md:col-span-2"
@@ -219,7 +219,7 @@ function ContactPage() {
                   className={inputBase}
                   value={values.callWindow}
                   onChange={(e) => set("callWindow", e.target.value)}
-                  placeholder="e.g. Tuesday 2–4 PM MT"
+                  placeholder="e.g. Tuesday 2–4 PM"
                 />
               </Field>
 

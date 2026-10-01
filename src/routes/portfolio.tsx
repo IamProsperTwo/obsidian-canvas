@@ -4,73 +4,70 @@ import { X } from "lucide-react";
 import { Hero, Reveal } from "@/components/editorial";
 import { cn } from "@/lib/utils";
 
+
 // ── Images (remote — replace with local imports later) ──
-const portfolioHero =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2400&q=80";
-const sandHouseCover =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
-const sandHouseGallery1 =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=2000&q=80";
-const sandHouseGallery2 =
-  "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=2000&q=80";
-const sandHouseGallery3 =
-  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=2000&q=80";
-const ochreRetreatCover =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80";
-const ochreRetreatGallery1 =
-  "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2000&q=80";
-const ochreRetreatGallery2 =
-  "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=2000&q=80";
-const ridgeCabinCover =
-  "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=1600&q=80";
-const ridgeCabinGallery1 =
-  "https://images.unsplash.com/photo-1449844908441-8829872d2607?auto=format&fit=crop&w=2000&q=80";
-const ridgeCabinGallery2 =
-  "https://images.unsplash.com/photo-1518602164578-cd0074062767?auto=format&fit=crop&w=2000&q=80";
-const alpineHouseCover =
-  "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=1600&q=80";
-const alpineHouseGallery1 =
-  "https://images.unsplash.com/photo-1502786129293-79981df4e689?auto=format&fit=crop&w=2000&q=80";
-const alpineHouseGallery2 =
-  "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=2000&q=80";
-const stillWaterCover =
-  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=1600&q=80";
-const stillWaterGallery1 =
-  "https://images.unsplash.com/photo-1600566753086-00f18fe6ba68?auto=format&fit=crop&w=2000&q=80";
-const stillWaterGallery2 =
-  "https://images.unsplash.com/photo-1613977257592-4a9a32f9141b?auto=format&fit=crop&w=2000&q=80";
-const tidalHouseCover =
-  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1600&q=80";
-const tidalHouseGallery1 =
-  "https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=2000&q=80";
-const tidalHouseGallery2 =
-  "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=80";
-const canopyHouseCover =
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1600&q=80";
-const canopyHouseGallery1 =
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=2000&q=80";
-const canopyHouseGallery2 =
-  "https://images.unsplash.com/photo-1501183638710-841dd1904471?auto=format&fit=crop&w=2000&q=80";
-const blackForestCover =
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80";
-const blackForestGallery1 =
-  "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=2000&q=80";
-const blackForestGallery2 =
-  "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=2000&q=80";
+import portfolioHero from "@/assets/A_4 - Photo.png";
+import sandHouseCover from "@/assets/AZIZ/AZ_OPTION A FACADE DESIGN.png";
+import sandHouseGallery1 from "@/assets/AZIZ/AZ_OPTION A FACADE DESIGN.png";
+import sandHouseGallery2 from "@/assets/AZIZ/AZ_option A facade 2.png";
+import sandHouseGallery3 from "@/assets/AZIZ/AZ_OPTION A FACADE DESIGN.png";
+import sandHouseGallery4 from "@/assets/AZIZ/AZ_OPTION A.png";
+
+import ochreRetreatCover from "@/assets/GERALD APARTMENT/1GA_Scene 2_upscale01.png";
+import ochreRetreatGallery1 from "@/assets/GERALD APARTMENT/1GA_Scene 2_upscale01.png";
+import ochreRetreatGallery2 from "@/assets/GERALD APARTMENT/2GA_Scene 4_1_upscale01.png";
+import ochreRetreatGallery3 from "@/assets/GERALD APARTMENT/3GA_Scene 5_upscale01.png";
+import ochreRetreatGallery4 from "@/assets/GERALD APARTMENT/4GA_Scene 1_upscale01.png";
+
+import ridgeCabinCover from "@/assets/CAPITOLINE/1BB_Clear.png";
+import ridgeCabinGallery1 from "@/assets/CAPITOLINE/1BB_Clear.png";
+import ridgeCabinGallery2 from "@/assets/CAPITOLINE/2CAP_Rainy.png";
+import ridgeCabinGallery3 from "@/assets/CAPITOLINE/3CAP_Photo - 9.png";
+import ridgeCabinGallery4 from "@/assets/CAPITOLINE/4cc_Photo - 10.png";
+
+import alpineHouseCover from "@/assets/HILL VIEW HOTEL/3test_10 - Photo.jpg";
+import alpineHouseGallery1 from "@/assets/HILL VIEW HOTEL/3test_10 - Photo.jpg";
+import alpineHouseGallery2 from "@/assets/HILL VIEW HOTEL/2Photo.jpg";
+import alpineHouseGallery3 from "@/assets/HILL VIEW HOTEL/5test_16 - Photo.jpg";
+import alpineHouseGallery4 from "@/assets/HILL VIEW HOTEL/4test_14 - Photo.jpg";
+
+import stillWaterCover from "@/assets/KABAIJA INTERIORS/1D_dinning.jpg";
+import stillWaterGallery1 from "@/assets/KABAIJA INTERIORS/1D_dinning.jpg";
+import stillWaterGallery2 from "@/assets/KABAIJA INTERIORS/3x_ent.png";
+import stillWaterGallery3 from "@/assets/KABAIJA INTERIORS/D_kitchen .jpg";
+import stillWaterGallery4 from "@/assets/KABAIJA INTERIORS/1.jpg";
+
+import tidalHouseCover from "@/assets/NDERA/5NDERA_7 - Photo.png";
+import tidalHouseGallery1 from "@/assets/NDERA/5NDERA_7 - Photo.png";
+import tidalHouseGallery2 from "@/assets/NDERA/3NDERA_16 - Photo.png";
+import tidalHouseGallery3 from "@/assets/NDERA/2NDERA_3 - Photo.png";
+import tidalHouseGallery4 from "@/assets/NDERA/4NDERA_9 - Photo.png";
+
+import canopyHouseCover from "@/assets/NYABIHU MILL PROJECT/1NYABIHU_1 - Photo.png";
+import canopyHouseGallery1 from "@/assets/NYABIHU MILL PROJECT/1NYABIHU_1 - Photo.png";
+import canopyHouseGallery2 from "@/assets/NYABIHU MILL PROJECT/2NYABIHU_9 - Photo.png";
+import canopyHouseGallery3 from "@/assets/NYABIHU MILL PROJECT/3NYABIHU_13 - Photo.png";
+import canopyHouseGallery4 from "@/assets/NYABIHU MILL PROJECT/4NYABIHU_4 - Photo.png";
+
+import blackForestCover from "@/assets/TIMOTHY RESIDENCE/1A_1 - Photo.png";
+import blackForestGallery1 from "@/assets/TIMOTHY RESIDENCE/1A_1 - Photo.png";
+import blackForestGallery2 from "@/assets/TIMOTHY RESIDENCE/2A_3 - Photo.png";
+import blackForestGallery3 from "@/assets/TIMOTHY RESIDENCE/5A_11 - Photo.png";
+import blackForestGallery4 from "@/assets/TIMOTHY RESIDENCE/4A_5 - Photo.png";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
-      { title: "Portfolio — Atelier Studio" },
-      { name: "description", content: "Selected projects in architecture and interior design across desert, mountain, water and woodland sites." },
-      { property: "og:title", content: "Portfolio — Atelier Studio" },
+      { title: "Portfolio — Ingabe Studio" },
+      { name: "description", content: "Selected projects across homes, commercial buildings, interior design and spaces." },
+      { property: "og:title", content: "Portfolio — Ingabe Studio" },
       { property: "og:description", content: "Selected projects in architecture and interior design." },
     ],
   }),
   component: PortfolioPage,
 });
 
-type Category = "Desert" | "Mountain" | "Water" | "Woods";
+type Category = "Homes" | "Commercial" | "Interior Design" | "Spaces";
 
 interface Project {
   id: string;
@@ -86,87 +83,87 @@ interface Project {
 const projects: Project[] = [
   {
     id: "sand-house",
-    name: "Sand House",
-    category: "Desert",
-    location: "Sonoran Desert, AZ",
-    year: "2024",
+    name: "Aziz Complex",
+    category: "Commercial",
+    location: "Rubavu",
+    year: "2025",
     cover: sandHouseCover,
-    gallery: [sandHouseGallery1, sandHouseGallery2, sandHouseGallery3],
-    description: "[A low, horizontal residence carved into the desert floor — courtyards, rammed earth walls, and shaded verandas frame long views across the valley.]",
+    gallery: [sandHouseGallery1, sandHouseGallery2, sandHouseGallery3, sandHouseGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "ochre-retreat",
-    name: "Ochre Retreat",
-    category: "Desert",
-    location: "Marfa, TX",
-    year: "2023",
+    name: "Gerald Apartment",
+    category: "Homes",
+    location: "Kigali",
+    year: "2025",
     cover: ochreRetreatCover,
-    gallery: [ochreRetreatGallery1, ochreRetreatGallery2],
-    description: "[A pair of pavilions clad in weathered steel — quiet, monastic interiors open onto endless horizon.]",
+    gallery: [ochreRetreatGallery1, ochreRetreatGallery2, ochreRetreatGallery3, ochreRetreatGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "ridge-cabin",
-    name: "Ridge Cabin",
-    category: "Mountain",
-    location: "Dolomites, Italy",
+    name: "Capitoline",
+    category: "Commercial",
+    location: "Kigali",
     year: "2024",
     cover: ridgeCabinCover,
-    gallery: [ridgeCabinGallery1, ridgeCabinGallery2],
-    description: "[Timber and stone lodge cantilevered over a ridge — vast glazed elevations follow the rock.]",
+    gallery: [ridgeCabinGallery1, ridgeCabinGallery2, ridgeCabinGallery3, ridgeCabinGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "alpine-house",
-    name: "Alpine House",
-    category: "Mountain",
-    location: "Zermatt, Switzerland",
+    name: "Hill View Hotel",
+    category: "Commercial",
+    location: "Musanze",
     year: "2022",
     cover: alpineHouseCover,
-    gallery: [alpineHouseGallery1, alpineHouseGallery2],
-    description: "[A chalet reimagined — dark charred cladding, minimal detailing, warm oak interiors.]",
+    gallery: [alpineHouseGallery1, alpineHouseGallery2, alpineHouseGallery3, alpineHouseGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "still-water",
-    name: "Still Water",
-    category: "Water",
-    location: "Sognefjord, Norway",
+    name: "Kabayija Interiors",
+    category: "Interior Design",
+    location: "Kigali",
     year: "2025",
     cover: stillWaterCover,
-    gallery: [stillWaterGallery1, stillWaterGallery2],
-    description: "[A residence hovering above the water — reflective glass planes dissolve into the fjord.]",
+    gallery: [stillWaterGallery1, stillWaterGallery2, stillWaterGallery3, stillWaterGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "tidal-house",
-    name: "Tidal House",
-    category: "Water",
-    location: "Big Sur, CA",
+    name: "Ndera",
+    category: "Homes",
+    location: "Ndera",
     year: "2023",
     cover: tidalHouseCover,
-    gallery: [tidalHouseGallery1, tidalHouseGallery2],
-    description: "[Board-formed concrete anchors the house to a cliff — walls of glass follow the coastline.]",
+    gallery: [tidalHouseGallery1, tidalHouseGallery2, tidalHouseGallery3, tidalHouseGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "canopy-house",
-    name: "Canopy House",
-    category: "Woods",
-    location: "Pacific Northwest, OR",
+    name: "Nyabihu Mill Project",
+    category: "Spaces",
+    location: "Nyabihu",
     year: "2024",
     cover: canopyHouseCover,
-    gallery: [canopyHouseGallery1, canopyHouseGallery2],
-    description: "[Elevated among old-growth firs — a slender, dark-clad volume with quiet, cathedral-like interiors.]",
+    gallery: [canopyHouseGallery1, canopyHouseGallery2, canopyHouseGallery3, canopyHouseGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
   {
     id: "black-forest",
-    name: "Black Forest",
-    category: "Woods",
-    location: "Baden-Württemberg, DE",
-    year: "2022",
+    name: "Timothy Residence",
+    category: "Homes",
+    location: "Kigali",
+    year: "2025",
     cover: blackForestCover,
-    gallery: [blackForestGallery1, blackForestGallery2],
-    description: "[A tight cluster of charred-timber volumes threaded between mature trees.]",
+    gallery: [blackForestGallery1, blackForestGallery2, blackForestGallery3, blackForestGallery4],
+    description: "The site sat on a north-facing slope with a fall of eleven metres across its width and a single access track that washed out twice a year. The client's brief asked for four bedrooms and a view. What the site asked for was a building that touched the ground in as few places as possible.",
   },
 ];
 
-const filters = ["All", "Desert", "Mountain", "Water", "Woods"] as const;
+const filters = ["All", "Homes", "Commercial", "Interior Design", "Spaces"] as const;
 type Filter = (typeof filters)[number];
 
 function PortfolioPage() {
@@ -196,8 +193,8 @@ function PortfolioPage() {
     <>
       <Hero
         image={portfolioHero}
-        eyebrow="Our work"
-        headline="Portfolio."
+        eyebrow=""
+        headline="Explore Our work"
       />
 
       <section className="section">
@@ -239,10 +236,7 @@ function PortfolioPage() {
                 <button
                   type="button"
                   onClick={() => setActive(p)}
-                  className={cn(
-                    "group relative block w-full overflow-hidden bg-background text-left",
-                    i % 3 === 0 ? "aspect-[4/5]" : "aspect-[4/3]",
-                  )}
+                  className="group relative block w-full aspect-[4/3] overflow-hidden bg-background text-left"
                 >
                   <img
                     src={p.cover}

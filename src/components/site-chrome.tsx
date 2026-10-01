@@ -5,13 +5,11 @@ import { cn } from "@/lib/utils";
 import { EditorialButton } from "@/components/editorial";
 import { Logo } from "@/components/logo";
 
+
 // ── Images (remote — replace with local imports later) ──
-const footerPortfolioImage =
-  "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80";
-const footerNewsletterImage =
-  "https://images.unsplash.com/photo-1600566753376-12c8ab7fb75b?auto=format&fit=crop&w=1600&q=80";
-const footerContactImage =
-  "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&w=1600&q=80";
+import footerPortfolioImage from "@/assets/5A_11 - Photo.png";
+import footerNewsletterImage from "@/assets/Sceneupscale.png";
+import footerContactImage from "@/assets/D_kitchen .jpg";
 
 const links = [
   { to: "/portfolio", label: "Portfolio" },
@@ -183,16 +181,17 @@ export function SiteFooter() {
             <Logo size={44} />
           </div>
           <div className="md:justify-self-end space-y-3">
-            <p className="eyebrow text-foreground">P / [Phone]</p>
-            <p className="eyebrow text-foreground">E / [Email]</p>
-            <p className="eyebrow text-foreground">[Instagram] / [Facebook]</p>
-            <p className="eyebrow text-foreground">Accessibility</p>
+            <p className="eyebrow text-foreground">+250 784 836 125</p>
+            <p className="eyebrow text-foreground">info@ingabecreations.com</p>
+            <p className="eyebrow text-foreground">Instagram</p>
+            <p className="eyebrow text-foreground">Youtube</p>
+            <p className="eyebrow text-foreground">Twitter</p>
           </div>
         </div>
         <hr className="hairline" />
         <div className="py-8">
-          <p className="text-xs text-muted-foreground">
-            © 2026 [Your Company]. Site by [You].
+          <p className="text-xs text-center text-muted-foreground">
+            © 2026 Ingabe Creations
           </p>
         </div>
       </div>
