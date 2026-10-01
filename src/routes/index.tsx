@@ -46,6 +46,16 @@ function Home() {
         image={heroImage}
         eyebrow=""
         headline="Architecture that belongs to its landscape."
+        actions={
+          <>
+            <Link to="/contact">
+              <EditorialButton>Contact Us</EditorialButton>
+            </Link>
+            <Link to="/portfolio">
+              <EditorialButton>View Our Work</EditorialButton>
+            </Link>
+          </>
+        }
       />
 
       {/* 2. Intro statement */}
