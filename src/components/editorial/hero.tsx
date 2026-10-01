@@ -1,11 +1,14 @@
+import type { ReactNode } from "react";
+
 interface Props {
   image: string;
   eyebrow: string;
   headline: string;
   imageAlt?: string;
+  actions?: ReactNode;
 }
 
-export function Hero({ image, eyebrow, headline, imageAlt = "" }: Props) {
+export function Hero({ image, eyebrow, headline, imageAlt = "", actions }: Props) {
   return (
     <section className="relative h-[100svh] min-h-[640px] w-full overflow-hidden">
       <img
@@ -22,6 +25,11 @@ export function Hero({ image, eyebrow, headline, imageAlt = "" }: Props) {
       <div className="relative z-10 h-full container-editorial flex flex-col items-center justify-end pb-16 text-center md:pb-24">
         <p className="eyebrow text-foreground/80">{eyebrow}</p>
         <h1 className="display-hero mt-6 max-w-6xl text-foreground">{headline}</h1>
+        {actions ? (
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+            {actions}
+          </div>
+        ) : null}
       </div>
     </section>
   );
